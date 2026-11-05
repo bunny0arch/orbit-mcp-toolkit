@@ -21,3 +21,9 @@ This log records material actions and results. It must distinguish inspections f
 - The repository contains seven documentation files (316 lines total), including the MCP inventory and ORBIT prompt analysis. A likely-secret-pattern scan found no matches before publishing.
 - This commit predates MCP installation/configuration and is the recovery checkpoint requested by the user.
 - **Toolkit work now begins:** official source verification, selective connector/runtime setup, and harmless validation. ORBIT application implementation remains out of scope.
+
+## 2026-11-05 — Playwright runtime check (installation pending)
+
+- Attempted to navigate to official GitHub, Exa, and MCP filesystem/sequential-thinking source pages with Playwright.
+- Each navigation failed before opening a page because the configured Firefox executable is absent at the expected Playwright cache path.
+- The configured MCP server does not expose a `browser_install` tool. The Playwright error explicitly recommends `npx @playwright/mcp install-browser firefox`; this browser-runtime-only install is the next step. No source page was opened by Playwright yet.
