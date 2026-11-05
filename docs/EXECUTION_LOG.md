@@ -1,6 +1,8 @@
 
-## 2026-11-05 — Sequential Thinking MCP enabled and validated
+## 2026-11-05 — Core validation exercise
 
-- Created and enabled `Sequential Thinking MCP` using the official `@modelcontextprotocol/server-sequential-thinking@2.1.1` package under Node v24.22.2. The connector sets `DISABLE_THOUGHT_LOGGING=true`.
-- The host listed the expected `sequentialthinking` tool. A harmless one-step operational summary completed successfully and returned a structured result with one recorded thought; no secrets or internal private reasoning were supplied.
-- Connector UID: `37f65ca3-9057-4bcd-ac78-829ff1ef094c`.
+- Context7 resolved `/reactjs/react.dev` and returned current official React `useState` documentation. Passed.
+- Filesystem MCP completed the guide-requested temporary write/read round trip inside its single allowed directory. The server has no `delete_file` tool; the exact temporary file created by this test was removed host-side, and the Git worktree is clean.
+- GitHub's built-in connector is enabled, but `manus-mcp-cli` reports no server named `github`. The authenticated `gh` CLI read public `reactjs/react.dev` repository metadata and had already created/pushed this private documentation repo. This is explicitly a CLI fallback, not a GitHub MCP test.
+- Supabase exposed 31 tools and Vercel exposed 246 tools, including the expected project/database and deployment/runtime-log capabilities. No production project/resource was selected or modified.
+- Playwright's harmless navigation and snapshot test passed earlier. Sequential Thinking's expected tool and safe high-level test call passed earlier. Exa remains untested because activation was not accepted.

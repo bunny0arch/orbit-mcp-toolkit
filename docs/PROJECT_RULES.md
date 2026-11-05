@@ -25,3 +25,10 @@ The ORBIT prompt requires a root-level `COMPONENTS.md` documenting each sourced 
 ## What this repository is not
 
 It is not a proof that ORBIT is deployed or feature-complete. It does not contain live student records, credentials, or production database dumps. It does not imply an Android client exists.
+
+## MCP connector decisions
+
+- The Filesystem MCP is scoped to this repository only. Do not broaden its allowlist; its current server exposes no delete-file tool.
+- The GitHub built-in connector is enabled and was selected by the MCP ensure flow. Avoid a duplicate connector without a concrete need and user authorization.
+- Exa activation was not accepted. Do not retry or bypass that choice by creating an alternate Exa connector.
+- Keep Supabase and Vercel validation to tool availability unless the user authorizes a specific project/resource operation.

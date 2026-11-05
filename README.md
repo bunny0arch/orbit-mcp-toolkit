@@ -9,9 +9,9 @@ This repository began as a documentation-first baseline. At that point, no MCP i
 ## Contents
 
 - [`docs/INITIAL_PLAN.md`](docs/INITIAL_PLAN.md) — scope, audit findings, ordered execution plan, guardrails, and checkpoint strategy.
-- [`docs/MCP_TOOLKIT.md`](docs/MCP_TOOLKIT.md) — integration inventory, availability, verified status, tests, and limitations.
+- [`docs/MCP_TOOLKIT.md`](docs/MCP_TOOLKIT.md) — integration inventory, availability, evidence-based status, tests, and limitations.
 - [`docs/SOURCE_RESEARCH.md`](docs/SOURCE_RESEARCH.md) — official source findings and endpoint/authentication decisions.
-- [`docs/SETUP_GUIDE.md`](docs/SETUP_GUIDE.md) — restoration and maintenance notes for another compatible Manus environment.
+- [`docs/SETUP_GUIDE.md`](docs/SETUP_GUIDE.md) — current connector status and safe restoration steps for another compatible Manus environment.
 - [`docs/EXECUTION_LOG.md`](docs/EXECUTION_LOG.md) — timestamped progress record.
 - [`docs/ORBIT_PROMPT_ANALYSIS.md`](docs/ORBIT_PROMPT_ANALYSIS.md) — structured summary of the user-provided ORBIT specification.
 - [`docs/PROJECT_RULES.md`](docs/PROJECT_RULES.md) — project scope, safety boundaries, and documentation conventions.
