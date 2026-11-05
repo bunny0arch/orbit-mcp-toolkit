@@ -13,3 +13,11 @@ This log records material actions and results. It must distinguish inspections f
 - Inspected Manus connector list; the command returned no user/session connector items. No connector configuration has been added or changed.
 - No Supabase project/schema/resource was changed; no Vercel project/deployment/domain/environment value was changed or read; no MCP was installed or newly configured; no ORBIT app was implemented.
 - **Next checkpoint:** publish this baseline as a private GitHub repository, then research official MCP sources and proceed with safe, selective configuration and validation.
+
+## 2026-11-05 — Documentation checkpoint published
+
+- Published the documentation-first baseline to the new private repository [`bunny0arch/orbit-mcp-toolkit`](https://github.com/bunny0arch/orbit-mcp-toolkit).
+- Initial commit: `726d647` (`docs: establish ORBIT MCP toolkit baseline`), branch `main`.
+- The repository contains seven documentation files (316 lines total), including the MCP inventory and ORBIT prompt analysis. A likely-secret-pattern scan found no matches before publishing.
+- This commit predates MCP installation/configuration and is the recovery checkpoint requested by the user.
+- **Toolkit work now begins:** official source verification, selective connector/runtime setup, and harmless validation. ORBIT application implementation remains out of scope.
