@@ -4,15 +4,17 @@ Private working repository for auditing, configuring, and validating the MCP too
 
 ## Status at repository creation
 
-This repository begins as a documentation-first baseline. At this point, no MCP installation, connector mutation, production resource change, or ORBIT application implementation has been performed. The verified initial inventory and staged execution plan are in [`docs/MCP_TOOLKIT.md`](docs/MCP_TOOLKIT.md) and [`docs/INITIAL_PLAN.md`](docs/INITIAL_PLAN.md).
+This repository began as a documentation-first baseline. At that point, no MCP installation, connector mutation, production resource change, or ORBIT application implementation had been performed. The staged plan and baseline are recorded in [`docs/INITIAL_PLAN.md`](docs/INITIAL_PLAN.md). Subsequent work is timestamped in the execution log.
 
 ## Contents
 
 - [`docs/INITIAL_PLAN.md`](docs/INITIAL_PLAN.md) — scope, audit findings, ordered execution plan, guardrails, and checkpoint strategy.
-- [`docs/MCP_TOOLKIT.md`](docs/MCP_TOOLKIT.md) — requested integration inventory, availability, known authentication state, tests, and limitations.
-- [`docs/SETUP_GUIDE.md`](docs/SETUP_GUIDE.md) — intended restoration and maintenance notes for another compatible Manus environment.
-- [`docs/EXECUTION_LOG.md`](docs/EXECUTION_LOG.md) — timestamped, append-only progress record.
-- [`docs/ORBIT_PROMPT_ANALYSIS.md`](docs/ORBIT_PROMPT_ANALYSIS.md) — structured summary of the user-provided 3,134-line ORBIT specification.
+- [`docs/MCP_TOOLKIT.md`](docs/MCP_TOOLKIT.md) — integration inventory, availability, verified status, tests, and limitations.
+- [`docs/SOURCE_RESEARCH.md`](docs/SOURCE_RESEARCH.md) — official source findings and endpoint/authentication decisions.
+- [`docs/SETUP_GUIDE.md`](docs/SETUP_GUIDE.md) — restoration and maintenance notes for another compatible Manus environment.
+- [`docs/EXECUTION_LOG.md`](docs/EXECUTION_LOG.md) — timestamped progress record.
+- [`docs/ORBIT_PROMPT_ANALYSIS.md`](docs/ORBIT_PROMPT_ANALYSIS.md) — structured summary of the user-provided ORBIT specification.
+- [`docs/PROJECT_RULES.md`](docs/PROJECT_RULES.md) — project scope, safety boundaries, and documentation conventions.
 
 ## Security
 
@@ -20,4 +22,4 @@ This repository is intended to be **private**. Do not commit access tokens, API 
 
 ## Scope boundary
 
-This repository documents and supports the MCP toolkit setup and readiness work. It does not claim the ORBIT product itself has been implemented. Any feature status must be backed by an actual implementation and test.
+This repository documents and supports MCP toolkit setup and readiness work. It does not claim the ORBIT product itself has been implemented. Any feature status must be backed by an actual implementation and test.

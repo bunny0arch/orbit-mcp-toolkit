@@ -1,29 +1,8 @@
-# Execution Log
 
-This log records material actions and results. It must distinguish inspections from changes and must never include credential values.
+## 2026-11-05 — Source verification and runtime readiness
 
-## 2026-11-05 — Initial baseline (before MCP installation/configuration)
-
-- Read the user's complete ORBIT prompt (3,134 lines) and summarized its objective, must-have scope, implementation tiers, differentiators, and engineering risks in `ORBIT_PROMPT_ANALYSIS.md`.
-- Read the supplied MCP toolkit guide.
-- Inspected the active Manus MCP server registry. Context7, Playwright, Supabase, and Vercel are present; other platform integrations are listed in `MCP_TOOLKIT.md`.
-- Inspected tool inventories for Context7, Playwright, Supabase, and Vercel. Playwright browser runtime installation is not yet verified.
-- Checked GitHub CLI availability and authentication status. `gh` is available and the active account displayed is `bunny0arch`. Credential values were not recorded.
-- Checked the proposed repository name; no repository was found at `bunny0arch/orbit-mcp-toolkit` during the read-only lookup.
-- Inspected Manus connector list; the command returned no user/session connector items. No connector configuration has been added or changed.
-- No Supabase project/schema/resource was changed; no Vercel project/deployment/domain/environment value was changed or read; no MCP was installed or newly configured; no ORBIT app was implemented.
-- **Next checkpoint:** publish this baseline as a private GitHub repository, then research official MCP sources and proceed with safe, selective configuration and validation.
-
-## 2026-11-05 — Documentation checkpoint published
-
-- Published the documentation-first baseline to the new private repository [`bunny0arch/orbit-mcp-toolkit`](https://github.com/bunny0arch/orbit-mcp-toolkit).
-- Initial commit: `726d647` (`docs: establish ORBIT MCP toolkit baseline`), branch `main`.
-- The repository contains seven documentation files (316 lines total), including the MCP inventory and ORBIT prompt analysis. A likely-secret-pattern scan found no matches before publishing.
-- This commit predates MCP installation/configuration and is the recovery checkpoint requested by the user.
-- **Toolkit work now begins:** official source verification, selective connector/runtime setup, and harmless validation. ORBIT application implementation remains out of scope.
-
-## 2026-11-05 — Playwright runtime check (installation pending)
-
-- Attempted to navigate to official GitHub, Exa, and MCP filesystem/sequential-thinking source pages with Playwright.
-- Each navigation failed before opening a page because the configured Firefox executable is absent at the expected Playwright cache path.
-- The configured MCP server does not expose a `browser_install` tool. The Playwright error explicitly recommends `npx @playwright/mcp install-browser firefox`; this browser-runtime-only install is the next step. No source page was opened by Playwright yet.
+- Installed the missing Firefox browser runtime using the exact browser-specific command recommended by the Playwright MCP error. The MCP then opened official GitHub, Exa, filesystem, and Sequential Thinking documentation pages; a harmless `example.com` navigation and snapshot check passed.
+- Saved first-party endpoint, authentication, scope, and package findings in `docs/SOURCE_RESEARCH.md`. The GitHub provider includes a read-only hosted endpoint; Exa supports keyless hosted search/fetch under a free rate limit.
+- The current Manus connector catalog already has the built-in GitHub integration enabled and an official Exa MCP entry disabled. No connector state has been changed yet. `gh` CLI was used only for the already-requested private repository creation/push.
+- Default Node is v22.23.4, while the current filesystem and Sequential Thinking package metadata each specify Node `>=24`. A temporary npm-provided Node v24.22.2 was resolved without replacing the system runtime. Planned local MCP process arguments will pin the verified package versions and restrict filesystem access to this repository; Sequential Thinking, if enabled, will disable thought logging.
+- Before adding connectors, the next checkpoint will document the exact configuration plan. Exa will use the official hosted endpoint. GitHub will use only its read-only hosted endpoint and may require user OAuth authorization. No PAT or API key will be copied from the environment or committed.

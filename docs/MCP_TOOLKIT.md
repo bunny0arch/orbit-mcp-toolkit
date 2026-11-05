@@ -1,60 +1,59 @@
 # MCP Toolkit Inventory
 
-**Last updated:** 2026-11-05, 13:00 IST  
-**Record status:** Pre-installation baseline. A tool appearing in the Manus session registry is not, by itself, proof that its browser runtime, account permissions, or intended operations have been tested.
+**Last updated:** 2026-11-05, 13:08 IST
+**Status:** Source verification and browser-runtime validation complete. Connector setup is pending. A catalog entry or successful package download does not by itself prove that the integration is enabled or operational.
 
 ## Requested core toolkit
 
-| Capability / requested MCP | Initial status | Evidence and safe interpretation | Next action |
-|---|---|---|---|
-| Context7 | Present in Manus session; tool inventory inspected | `resolve-library-id` and `query-docs` are exposed. No documentation query has yet been run. | Validate by retrieving current React docs. |
-| Playwright | Present in Manus session; tool inventory inspected | Browser navigation, interaction, snapshots, screenshots, and console tools are exposed. Browser runtime is not yet verified. | Check official installation hook; install browser if supported, then open a harmless page. |
-| Supabase | Present; runtime marks authenticated | MCP exposes project/schema/auth/storage-related operations, including project listing and read-only schema inspection. No project has been inspected or modified. | Verify expected tools only; do not alter a project during toolkit validation. |
-| Vercel | Present in Manus session; tool inventory inspected | MCP exposes project/deployment/documentation and related tools. Account access for a specific project has not been validated. | Validate availability safely; avoid resource creation and secret reads. |
-| GitHub MCP | Not listed in the session MCP registry | `gh` CLI is installed and authenticated to GitHub account `bunny0arch`. The repository-management requirement can currently be served by that CLI, but that is not a GitHub MCP. | Research the official GitHub MCP and Manus registration/auth options; avoid redundant setup if connector flow is unavailable. |
-| Filesystem MCP | Not listed as a dedicated MCP | Manus `read`, `write`, and `edit` tools and sandbox file operations are available. The filesystem capability is present natively, but no Filesystem MCP is claimed. | Evaluate official MCP only if it materially improves authorized workspace access. |
-| Exa MCP | Not listed in session registry | Platform web search exists; it is not Exa. | Verify official Exa MCP and auth model; install only if supported and useful. Otherwise document search as alternative. |
-| Sequential Thinking MCP | Not listed in session registry | Native reasoning, agent, and workflow orchestration capabilities exist; none should be represented as this named server. | Verify official project status/compatibility; skip if redundant, abandoned, or incompatible. |
+| Capability / requested MCP | Verified status | Evidence and next action |
+|---|---|---|
+| Context7 | Present and enabled in this task's connector catalog | Context7 tools are exposed in the session. No library-documentation query has yet been used to validate the connector. |
+| Playwright | Present, runtime installed, validated | Firefox 158.0 was installed with the browser-specific command recommended by the MCP's own error. Playwright opened official provider documentation pages and `https://example.com`; the test page rendered successfully. The MCP tool list did not expose a `browser_install` operation. |
+| Supabase | Present; integration reports authenticated | Supabase tools were inventoried. No project was selected or modified; project-level access remains untested. |
+| Vercel | Present in the session | No particular team or project was accessed or changed. |
+| GitHub | Built-in GitHub connector enabled; `gh` CLI authenticated as `bunny0arch` | Used the CLI to create and push this private repository. This built-in connector is not the same thing as GitHub's official hosted MCP server. The latter is being considered separately with its documented read-only endpoint and OAuth flow. |
+| Filesystem MCP | Official package verified; connector not yet configured | Official package `@modelcontextprotocol/server-filesystem` v2.2.0 reports Node.js `>=24`; the sandbox's default Node is v22.23.4. An isolated Node 24.22.2 runtime was successfully resolved via `npx --package=node@24`. If configured, the MCP will be restricted to this repository folder only. |
+| Exa MCP | Official hosted connector exists in the catalog but is disabled | Its endpoint matches the official docs. Exa documents anonymous/keyless search and fetch at a free rate limit. Next, use the existing connector's supported authorization/connect flow and validate one safe public search. |
+| Sequential Thinking MCP | Official package verified; connector not yet configured | Package v2.1.1 reports Node.js `>=24`, while the default runtime is v22.23.4. The isolated Node 24.22.2 runtime works. It can be added locally with thought logging disabled, if configuration succeeds. |
 
 ## Optional MCPs named in the guide
 
-| MCP | Initial status | Decision rule |
+| MCP | Verified status | Decision |
 |---|---|---|
-| Figma | Not listed | Optional; configure only if there is an authorized Figma account and a concrete design file/use case. |
-| Shadcn | Not listed | Optional; component docs and packages can be accessed through existing research tools. Add a server only if it provides a real supported advantage. |
-| Memory | Not listed | Optional; prefer the repository/project documentation and existing session context unless a maintained MCP adds meaningful persistence. |
+| Figma | Not listed in the active session | Optional. Defer unless a Figma file and authorized account are needed for the ORBIT design workflow. |
+| Shadcn | Not listed as a dedicated MCP | Optional. Current docs/search sources can retrieve component information; defer unless a concrete advantage appears. |
+| Memory | Not listed as a dedicated MCP | Optional. The private GitHub repository and current session already provide project persistence; defer unless longer-term memory becomes necessary. |
 
 ## Other Manus-provided integrations visible initially
 
-The session registry also exposed `manus-tools`, `manus-device`, `handoff`, `manus-tasks`, `slides`, `triggers`, `trip`, `webdev-mcp`, and `workflow`. These are existing platform integrations; they are not being installed or modified as part of the initial audit. For ORBIT engineering, the directly relevant ones are browser tooling through `manus-tools`, task orchestration via `workflow`, and web application development via `webdev-mcp` if and when app implementation is requested.
+The session also exposes `manus-tools`, `manus-device`, `handoff`, `manus-tasks`, `slides`, `triggers`, `trip`, `webdev-mcp`, and `workflow`. These are existing platform integrations, not installations performed for the ORBIT application. Relevant existing capability coverage includes browser automation, file operations, and workflow orchestration.
 
-## Authentication and permissions
+## Permissions and secrets
 
-- GitHub CLI status showed the account `bunny0arch` as active. No token values are stored in this repository.
-- Supabase is marked authenticated at the integration level. No project-specific authorization or schema test is claimed yet.
-- Vercel MCP is listed; no specific Vercel team/project operation has been authorized or validated.
-- Any future MCP OAuth/API-key step that requires the account owner must be completed through the provider's proper authorization UI/card. Never copy secrets into GitHub.
+The GitHub CLI is authenticated as `bunny0arch`; no credential has been copied from it into an MCP configuration or this repository. The GitHub built-in connector is enabled. The official remote GitHub MCP's read-only endpoint remains separate and may require OAuth authorization through Manus.
 
-## Validation matrix (pending)
+Exa search/fetch can run keylessly under Exa's documented free rate limit. Do not add an API key unless the user separately authorizes authenticated or usage-based access. Supabase is marked authenticated at the integration level, but no project-level access is claimed. Never place API keys, PATs, cookies, or service-role credentials in this repository.
 
-| Test | Expected safe operation | Status |
-|---|---|---|
-| Context7 | Resolve React docs and retrieve current documentation | Pending |
-| Exa / search | Find a public open-source React component repository; explicitly label the tool actually used | Pending |
-| GitHub | Inspect a public repository read-only | Pending |
-| Filesystem | Create, read, and remove a temporary file under this workspace | Pending |
-| Playwright | Verify browser runtime, open a harmless test site, inspect page snapshot/console | Pending |
-| Supabase | Confirm expected tools and, if appropriate, perform a harmless read-only project listing | Pending |
-| Vercel | Confirm expected tools and safe account state without reading secrets or creating resources | Pending |
-| Advanced reasoning | Verify whether a dedicated Sequential Thinking MCP can be made available; otherwise document the native alternative | Pending |
+## Validation matrix
+
+| Test | Result |
+|---|---|
+| Context7 documentation lookup | Pending |
+| Exa public web search | Pending activation and validation |
+| GitHub repository read | `gh` CLI validated by private repository creation and push; GitHub MCP itself pending |
+| Filesystem MCP restricted workspace operation | Pending connector setup |
+| Playwright open and inspect page | Passed: official provider pages and `example.com` opened; test page rendered |
+| Supabase operation | Not run; no project selected or modified |
+| Vercel operation | Not run; no project selected or modified |
+| Sequential Thinking tool availability | Pending connector setup |
 
 ## Status vocabulary
 
-- **Present in session:** server/tools appear in the active Manus MCP registry.
-- **Configured:** connector setup exists and is enabled in the active environment.
-- **Authenticated:** an authorization state is confirmed, without exposing credentials.
-- **Validated:** at least one harmless operation using the integration completed successfully.
-- **Unavailable:** no supported compatible connector/install route is available in this environment.
-- **Deferred:** intentionally not configured because it is optional, redundant, unsafe, or needs user authorization.
+- **Present:** tools or a connector entry appear in the active Manus session/catalog.
+- **Enabled:** the connector is active for the current task.
+- **Authenticated:** authorization is confirmed at the stated integration level.
+- **Validated:** a harmless operation completed successfully.
+- **Pending:** setup or validation has not been completed.
+- **Deferred:** intentionally not configured because it is optional, redundant, unsafe, or incompatible.
 
-Do not collapse these states or infer one from another.
+Do not infer one status from another.
