@@ -1,6 +1,6 @@
 
-## 2026-11-05 — Filesystem MCP enabled and scoped
+## 2026-11-05 — Sequential Thinking MCP enabled and validated
 
-- Created and enabled `Filesystem MCP` using the official `@modelcontextprotocol/server-filesystem@2.2.0` package under isolated Node v24.22.2. Its only allowed directory is `/home/ubuntu/orbit-mcp-toolkit`.
-- Enumerated the exposed tools and called the read-only `list_allowed_directories` tool. It returned exactly `/home/ubuntu/orbit-mcp-toolkit`; no home-root or system paths were allowed.
-- Connector UID: `d1277358-15cd-4f0b-a085-235dc5774724`. No file was created, overwritten, or deleted as part of validation.
+- Created and enabled `Sequential Thinking MCP` using the official `@modelcontextprotocol/server-sequential-thinking@2.1.1` package under Node v24.22.2. The connector sets `DISABLE_THOUGHT_LOGGING=true`.
+- The host listed the expected `sequentialthinking` tool. A harmless one-step operational summary completed successfully and returned a structured result with one recorded thought; no secrets or internal private reasoning were supplied.
+- Connector UID: `37f65ca3-9057-4bcd-ac78-829ff1ef094c`.

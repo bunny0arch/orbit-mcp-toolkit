@@ -14,7 +14,7 @@
 | GitHub | Built-in GitHub connector enabled; `gh` CLI authenticated as `bunny0arch` | Used the CLI to create and push this private repository. The GitHub MCP ensure flow selected this existing integration and did not create a separate hosted MCP. No OAuth/PAT was added to a custom server. |
 | Filesystem MCP | Created, enabled, and scope-validated | Official `@modelcontextprotocol/server-filesystem@2.2.0` runs under isolated Node v24.22.2. `list_allowed_directories` returned only `/home/ubuntu/orbit-mcp-toolkit`. |
 | Exa MCP | Existing official catalog connector remains disabled; activation was not accepted | No retry or alternate Exa connector will be created. Use Manus platform web search when needed and label it as such, not as Exa. |
-| Sequential Thinking MCP | Official package verified; connector not yet configured | Package v2.1.1 reports Node.js `>=24`, while the default runtime is v22.23.4. The isolated Node 24.22.2 runtime works. It can be added locally with thought logging disabled, if configuration succeeds. |
+| Sequential Thinking MCP | Created, enabled, and tool-validated | Official `@modelcontextprotocol/server-sequential-thinking@2.1.1` runs under isolated Node v24.22.2. `DISABLE_THOUGHT_LOGGING=true` is set; the expected tool and a harmless high-level call succeeded. |
 
 ## Optional MCPs named in the guide
 
@@ -45,7 +45,7 @@ Exa search/fetch can run keylessly under Exa's documented free rate limit. Do no
 | Playwright open and inspect page | Passed: official provider pages and `example.com` opened; test page rendered |
 | Supabase operation | Not run; no project selected or modified |
 | Vercel operation | Not run; no project selected or modified |
-| Sequential Thinking tool availability | Pending connector setup |
+| Sequential Thinking tool availability | Passed: expected tool listed and harmless high-level call succeeded |
 
 ## Status vocabulary
 
