@@ -14,3 +14,8 @@ The next connector operations will be limited to the already-requested integrati
 - Ran the supported `connector ensure Exa` flow for the existing official catalog entry. The session reported that Exa remains disabled and that the original activation suggestion was not accepted.
 - Respecting that choice: no second activation attempt and no alternate/custom Exa connector will be created. Use the existing platform web-search capability when source discovery is needed; label it accurately rather than calling it Exa.
 - This outcome does not affect the separately requested GitHub, filesystem, Playwright, Supabase, Vercel, or Sequential Thinking checks.
+
+## 2026-11-05 — GitHub MCP ensure outcome
+
+- Submitted the GitHub official read-only endpoint through the documented `connector ensure` flow. Manus matched the request to the existing enabled built-in GitHub connector and reported it ready.
+- No separate remote GitHub MCP was created, no OAuth/PAT was added, and no write-capable endpoint was configured. GitHub access for repository documentation is available through the authenticated CLI and built-in connector. This distinction remains explicit in the inventory.
