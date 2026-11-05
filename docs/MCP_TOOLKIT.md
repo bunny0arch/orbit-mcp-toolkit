@@ -13,7 +13,7 @@
 | Vercel | Present in the session | No particular team or project was accessed or changed. |
 | GitHub | Built-in GitHub connector enabled; `gh` CLI authenticated as `bunny0arch` | Used the CLI to create and push this private repository. This built-in connector is not the same thing as GitHub's official hosted MCP server. The latter is being considered separately with its documented read-only endpoint and OAuth flow. |
 | Filesystem MCP | Official package verified; connector not yet configured | Official package `@modelcontextprotocol/server-filesystem` v2.2.0 reports Node.js `>=24`; the sandbox's default Node is v22.23.4. An isolated Node 24.22.2 runtime was successfully resolved via `npx --package=node@24`. If configured, the MCP will be restricted to this repository folder only. |
-| Exa MCP | Official hosted connector exists in the catalog but is disabled | Its endpoint matches the official docs. Exa documents anonymous/keyless search and fetch at a free rate limit. Next, use the existing connector's supported authorization/connect flow and validate one safe public search. |
+| Exa MCP | Existing official catalog connector remains disabled; activation was not accepted | No retry or alternate Exa connector will be created. Use Manus platform web search when needed and label it as such, not as Exa. |
 | Sequential Thinking MCP | Official package verified; connector not yet configured | Package v2.1.1 reports Node.js `>=24`, while the default runtime is v22.23.4. The isolated Node 24.22.2 runtime works. It can be added locally with thought logging disabled, if configuration succeeds. |
 
 ## Optional MCPs named in the guide

@@ -8,3 +8,9 @@ The next connector operations will be limited to the already-requested integrati
 - Filesystem: run `@modelcontextprotocol/server-filesystem@2.2.0` under `node@24.22.2` and allow only `/home/ubuntu/orbit-mcp-toolkit`; do not grant home-directory or system access.
 - Sequential Thinking: if attached, run `@modelcontextprotocol/server-sequential-thinking@2.1.1` under `node@24.22.2` with `DISABLE_THOUGHT_LOGGING=true`. It remains optional and will be reported as pending if the host does not expose its tool.
 - No ORBIT application, external service resource, database, deployment, or repository permission changes are included in this phase.
+
+## 2026-11-05 — Exa activation outcome
+
+- Ran the supported `connector ensure Exa` flow for the existing official catalog entry. The session reported that Exa remains disabled and that the original activation suggestion was not accepted.
+- Respecting that choice: no second activation attempt and no alternate/custom Exa connector will be created. Use the existing platform web-search capability when source discovery is needed; label it accurately rather than calling it Exa.
+- This outcome does not affect the separately requested GitHub, filesystem, Playwright, Supabase, Vercel, or Sequential Thinking checks.
